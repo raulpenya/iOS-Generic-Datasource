@@ -1,2 +1,2 @@
-# iOS-Generic-Networking-Datasource
-Light generic networking datasource that fits in every project
+# iOS-Generic-Datasource
+Light weight generic datasource that fits in every project
