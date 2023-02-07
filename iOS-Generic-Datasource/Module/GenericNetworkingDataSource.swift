@@ -26,9 +26,7 @@ extension GenericNetworkingDataSource {
         return resource.transform(entity)
     }
     
-//    func request<T, Q>(with session: URLSession, resource: Resource<T, Q>) -> AnyPublisher<Q, Error> {
-//        let task = session.dataTask(with: resource.request)
-//        let task = session.dataTaskPublisher(for: <#T##URL#>)
-//        task.
-//    }
+    func request<T, Q>(with session: URLSession, resource: Resource<T, Q>) -> AnyPublisher<Q, Error> {
+        return session.dataTaskPublisher(for: resource.request).map(\.data).decode(type: T.self, decoder: JSONDecoder()).compactMap { resource.transform($0) }.eraseToAnyPublisher()
+    }
 }
