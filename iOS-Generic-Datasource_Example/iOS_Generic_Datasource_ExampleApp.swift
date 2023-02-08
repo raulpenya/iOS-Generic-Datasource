@@ -11,7 +11,7 @@ import SwiftUI
 struct iOS_Generic_Datasource_ExampleApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(viewModel: ContentViewModel())
         }
     }
 }
