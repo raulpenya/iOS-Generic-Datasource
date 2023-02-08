@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C1FB8E02993997200EB5B8C /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1FB8DF2993997200EB5B8C /* Person.swift */; };
+		0C1FB8E32993AA6000EB5B8C /* ExampleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1FB8E22993AA6000EB5B8C /* ExampleDataSource.swift */; };
+		0C1FB8E62993AF2B00EB5B8C /* Persons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1FB8E52993AF2B00EB5B8C /* Persons.swift */; };
+		0C242E1629927D5F009DEDAC /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C242E1529927D5F009DEDAC /* ContentViewModel.swift */; };
 		0C48E38A29912EF400B506C3 /* iOS_Generic_Datasource_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C48E38929912EF400B506C3 /* iOS_Generic_Datasource_Tests.swift */; };
 		0C48E39129912F1C00B506C3 /* GenericNetworkingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C48E39029912F1C00B506C3 /* GenericNetworkingDataSource.swift */; };
 		0CBD0F0929912E5D009CB8BE /* iOS_Generic_Datasource_ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD0F0829912E5D009CB8BE /* iOS_Generic_Datasource_ExampleApp.swift */; };
@@ -26,6 +30,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C1FB8DF2993997200EB5B8C /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		0C1FB8E22993AA6000EB5B8C /* ExampleDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleDataSource.swift; sourceTree = "<group>"; };
+		0C1FB8E52993AF2B00EB5B8C /* Persons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persons.swift; sourceTree = "<group>"; };
+		0C242E1529927D5F009DEDAC /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		0C48E38729912EF400B506C3 /* iOS-Generic-Datasource-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-Generic-Datasource-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C48E38929912EF400B506C3 /* iOS_Generic_Datasource_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Generic_Datasource_Tests.swift; sourceTree = "<group>"; };
 		0C48E39029912F1C00B506C3 /* GenericNetworkingDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericNetworkingDataSource.swift; sourceTree = "<group>"; };
@@ -54,6 +62,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C1FB8E12993AA4C00EB5B8C /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				0C1FB8E22993AA6000EB5B8C /* ExampleDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		0C242E1729927E5F009DEDAC /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				0C242E1829927EFB009DEDAC /* Model */,
+				0C242E1529927D5F009DEDAC /* ContentViewModel.swift */,
+				0CBD0F0A29912E5D009CB8BE /* ContentView.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		0C242E1829927EFB009DEDAC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0C1FB8E52993AF2B00EB5B8C /* Persons.swift */,
+				0C1FB8DF2993997200EB5B8C /* Person.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		0C48E38029912EB000B506C3 /* iOS-Generic-Datasource */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,8 +135,9 @@
 		0CBD0F0729912E5D009CB8BE /* iOS-Generic-Datasource_Example */ = {
 			isa = PBXGroup;
 			children = (
+				0C1FB8E12993AA4C00EB5B8C /* DataSource */,
+				0C242E1729927E5F009DEDAC /* Content */,
 				0CBD0F0829912E5D009CB8BE /* iOS_Generic_Datasource_ExampleApp.swift */,
-				0CBD0F0A29912E5D009CB8BE /* ContentView.swift */,
 				0CBD0F0C29912E5F009CB8BE /* Assets.xcassets */,
 				0CBD0F0E29912E5F009CB8BE /* Preview Content */,
 			);
@@ -224,6 +260,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C1FB8E02993997200EB5B8C /* Person.swift in Sources */,
+				0C1FB8E62993AF2B00EB5B8C /* Persons.swift in Sources */,
+				0C1FB8E32993AA6000EB5B8C /* ExampleDataSource.swift in Sources */,
+				0C242E1629927D5F009DEDAC /* ContentViewModel.swift in Sources */,
 				0CBD0F0B29912E5D009CB8BE /* ContentView.swift in Sources */,
 				0C48E39129912F1C00B506C3 /* GenericNetworkingDataSource.swift in Sources */,
 				0CBD0F0929912E5D009CB8BE /* iOS_Generic_Datasource_ExampleApp.swift in Sources */,
