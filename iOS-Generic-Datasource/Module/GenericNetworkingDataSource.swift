@@ -13,34 +13,42 @@ struct Resource<T: Decodable, Q> {
     let transform: (T) -> Q
 }
 
-protocol GenericNetworkingDataSource {
+protocol GenericNetworkingDataSource: AnyObject {
     func request<T, Q>(with session: URLSession, resource: Resource<T, Q>) async throws -> Q
     func request<T, Q>(with session: URLSession, resource: Resource<T, Q>) -> AnyPublisher<Q, Error>
 }
 
 extension GenericNetworkingDataSource {
     func request<T, Q>(with session: URLSession, resource: Resource<T, Q>) async throws -> Q {
-        let (data, _) = try await session.data(for: resource.request)
+        let (data, response) = try await session.data(for: resource.request)
+        let responseData = try handleResponse(data: data, response: response)
         let decoder = JSONDecoder()
         let entity = try decoder.decode(T.self, from: data)
         return resource.transform(entity)
     }
     
     func request<T, Q>(with session: URLSession, resource: Resource<T, Q>) -> AnyPublisher<Q, Error> {
-        return session.dataTaskPublisher(for: resource.request).tryMap { data, response in
-            guard let urlResponse = response as? HTTPURLResponse else {
-                throw NSError(domain: "GenericNetworkingDataSource.request.HTTPURLResponse", code: 400)
+        return session.dataTaskPublisher(for: resource.request).tryMap { [weak self] data, response in
+            guard let strongSelf = self else {
+                throw NSError(domain: "GenericNetworkingDataSource.request", code: 800)
             }
-            if (200..<300) ~= urlResponse.statusCode {
-                return data
-            } else {
-                let str = String(decoding: data, as: UTF8.self)
-                if !str.isEmpty {
-                    throw NSError(domain: str, code: urlResponse.statusCode)
-                } else {
-                    throw NSError(domain: "GenericNetworkingDataSource.request.error", code: urlResponse.statusCode)
-                }
-            }
+            return try strongSelf.handleResponse(data: data, response: response)
         }.decode(type: T.self, decoder: JSONDecoder()).compactMap { resource.transform($0) }.eraseToAnyPublisher()
+    }
+    
+    private func handleResponse(data: Data, response: URLResponse) throws -> Data {
+        guard let urlResponse = response as? HTTPURLResponse else {
+            throw NSError(domain: "GenericNetworkingDataSource.request.HTTPURLResponse", code: 400)
+        }
+        if (200..<300) ~= urlResponse.statusCode {
+            return data
+        } else {
+            let str = String(decoding: data, as: UTF8.self)
+            if !str.isEmpty {
+                throw NSError(domain: str, code: urlResponse.statusCode)
+            } else {
+                throw NSError(domain: "GenericNetworkingDataSource.request.error", code: urlResponse.statusCode)
+            }
+        }
     }
 }
