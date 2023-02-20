@@ -27,6 +27,20 @@ extension GenericNetworkingDataSource {
     }
     
     func request<T, Q>(with session: URLSession, resource: Resource<T, Q>) -> AnyPublisher<Q, Error> {
-        return session.dataTaskPublisher(for: resource.request).map { $0.data }.decode(type: T.self, decoder: JSONDecoder()).compactMap {  resource.transform($0) }.eraseToAnyPublisher()
+        return session.dataTaskPublisher(for: resource.request).tryMap { data, response in
+            guard let urlResponse = response as? HTTPURLResponse else {
+                throw NSError(domain: "GenericNetworkingDataSource.request.HTTPURLResponse", code: 400)
+            }
+            if (200..<300) ~= urlResponse.statusCode {
+                return data
+            } else {
+                let str = String(decoding: data, as: UTF8.self)
+                if !str.isEmpty {
+                    throw NSError(domain: str, code: urlResponse.statusCode)
+                } else {
+                    throw NSError(domain: "GenericNetworkingDataSource.request.error", code: urlResponse.statusCode)
+                }
+            }
+        }.decode(type: T.self, decoder: JSONDecoder()).compactMap { resource.transform($0) }.eraseToAnyPublisher()
     }
 }
