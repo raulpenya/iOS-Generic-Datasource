@@ -22,8 +22,7 @@ extension GenericNetworkingDataSource {
     func request<T, Q>(with session: URLSession, resource: Resource<T, Q>) async throws -> Q {
         let (data, response) = try await session.data(for: resource.request)
         let responseData = try handleResponse(data: data, response: response)
-        let decoder = JSONDecoder()
-        let entity = try decoder.decode(T.self, from: data)
+        let entity = try JSONDecoder().decode(T.self, from: responseData)
         return resource.transform(entity)
     }
     
