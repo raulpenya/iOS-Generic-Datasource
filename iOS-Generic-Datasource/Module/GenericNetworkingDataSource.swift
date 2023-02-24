@@ -35,7 +35,7 @@ extension GenericNetworkingDataSource {
         }.decode(type: T.self, decoder: JSONDecoder()).compactMap { resource.transform($0) }.eraseToAnyPublisher()
     }
     
-    private func handleResponse(data: Data, response: URLResponse) throws -> Data {
+    func handleResponse(data: Data, response: URLResponse) throws -> Data {
         guard let urlResponse = response as? HTTPURLResponse else {
             throw NSError(domain: "GenericNetworkingDataSource.request.HTTPURLResponse", code: 400)
         }

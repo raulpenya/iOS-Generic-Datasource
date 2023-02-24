@@ -11,7 +11,8 @@
 		0C1FB8E32993AA6000EB5B8C /* ExampleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1FB8E22993AA6000EB5B8C /* ExampleDataSource.swift */; };
 		0C1FB8E62993AF2B00EB5B8C /* Persons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1FB8E52993AF2B00EB5B8C /* Persons.swift */; };
 		0C242E1629927D5F009DEDAC /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C242E1529927D5F009DEDAC /* ContentViewModel.swift */; };
-		0C48E38A29912EF400B506C3 /* iOS_Generic_Datasource_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C48E38929912EF400B506C3 /* iOS_Generic_Datasource_Tests.swift */; };
+		0C2E9A8229A8D56F00FD71CC /* HandleResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2E9A8129A8D56F00FD71CC /* HandleResponseTests.swift */; };
+		0C2E9A8429A8D62300FD71CC /* MockGenericNetworkingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2E9A8329A8D62300FD71CC /* MockGenericNetworkingDataSource.swift */; };
 		0C48E39129912F1C00B506C3 /* GenericNetworkingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C48E39029912F1C00B506C3 /* GenericNetworkingDataSource.swift */; };
 		0CBD0F0929912E5D009CB8BE /* iOS_Generic_Datasource_ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD0F0829912E5D009CB8BE /* iOS_Generic_Datasource_ExampleApp.swift */; };
 		0CBD0F0B29912E5D009CB8BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD0F0A29912E5D009CB8BE /* ContentView.swift */; };
@@ -34,8 +35,9 @@
 		0C1FB8E22993AA6000EB5B8C /* ExampleDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleDataSource.swift; sourceTree = "<group>"; };
 		0C1FB8E52993AF2B00EB5B8C /* Persons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persons.swift; sourceTree = "<group>"; };
 		0C242E1529927D5F009DEDAC /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		0C2E9A8129A8D56F00FD71CC /* HandleResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleResponseTests.swift; sourceTree = "<group>"; };
+		0C2E9A8329A8D62300FD71CC /* MockGenericNetworkingDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGenericNetworkingDataSource.swift; sourceTree = "<group>"; };
 		0C48E38729912EF400B506C3 /* iOS-Generic-Datasource-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-Generic-Datasource-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C48E38929912EF400B506C3 /* iOS_Generic_Datasource_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Generic_Datasource_Tests.swift; sourceTree = "<group>"; };
 		0C48E39029912F1C00B506C3 /* GenericNetworkingDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericNetworkingDataSource.swift; sourceTree = "<group>"; };
 		0CBD0F0529912E5D009CB8BE /* iOS-Generic-Datasource_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Generic-Datasource_Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CBD0F0829912E5D009CB8BE /* iOS_Generic_Datasource_ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Generic_Datasource_ExampleApp.swift; sourceTree = "<group>"; };
@@ -89,6 +91,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		0C2E9A8529A8D71A00FD71CC /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				0C2E9A8329A8D62300FD71CC /* MockGenericNetworkingDataSource.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		0C48E38029912EB000B506C3 /* iOS-Generic-Datasource */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,7 +119,8 @@
 		0C48E38229912EC200B506C3 /* UnitTests */ = {
 			isa = PBXGroup;
 			children = (
-				0C48E38929912EF400B506C3 /* iOS_Generic_Datasource_Tests.swift */,
+				0C2E9A8529A8D71A00FD71CC /* Mocks */,
+				0C2E9A8129A8D56F00FD71CC /* HandleResponseTests.swift */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -252,7 +263,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C48E38A29912EF400B506C3 /* iOS_Generic_Datasource_Tests.swift in Sources */,
+				0C2E9A8429A8D62300FD71CC /* MockGenericNetworkingDataSource.swift in Sources */,
+				0C2E9A8229A8D56F00FD71CC /* HandleResponseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
