@@ -29,7 +29,7 @@ extension GenericNetworkingDataSource {
     func request<T, Q>(with session: URLSession, resource: Resource<T, Q>) -> AnyPublisher<Q, Error> {
         return session.dataTaskPublisher(for: resource.request).tryMap { [weak self] data, response in
             guard let strongSelf = self else {
-                throw NSError(domain: "GenericNetworkingDataSource.request", code: 800)
+                throw  DataSourceErrors.instanceException
             }
             return try strongSelf.handleResponse(data: data, response: response)
         }.decode(type: T.self, decoder: JSONDecoder()).compactMap { resource.transform($0) }.eraseToAnyPublisher()
@@ -37,7 +37,7 @@ extension GenericNetworkingDataSource {
     
     func handleResponse(data: Data, response: URLResponse) throws -> Data {
         guard let urlResponse = response as? HTTPURLResponse else {
-            throw NSError(domain: "GenericNetworkingDataSource.request.HTTPURLResponse", code: 400)
+            throw DataSourceErrors.castHTTPURLResponseException
         }
         if (200..<300) ~= urlResponse.statusCode {
             return data
@@ -46,7 +46,7 @@ extension GenericNetworkingDataSource {
             if !str.isEmpty {
                 throw NSError(domain: str, code: urlResponse.statusCode)
             } else {
-                throw NSError(domain: "GenericNetworkingDataSource.request.error", code: urlResponse.statusCode)
+                throw NSError(domain: DataSourceErrors.networkingRequestError.localizedDescription, code: urlResponse.statusCode)
             }
         }
     }
