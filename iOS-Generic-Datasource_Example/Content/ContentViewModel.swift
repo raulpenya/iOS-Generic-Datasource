@@ -15,8 +15,12 @@ class ContentViewModel: ObservableObject {
     func networkAsyncButtonPressed() {
         Task {
             let datasource = ExampleDataSource()
-            let persons = await datasource.getAllPersons()
-            print(persons)
+            do {
+                let persons = try await datasource.getAllPersons()
+                print(persons)
+            } catch {
+                print(error)
+            }
         }
     }
     
