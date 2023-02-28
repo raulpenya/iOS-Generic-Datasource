@@ -14,12 +14,12 @@ struct Resource<T: Decodable, Q> {
 }
 
 protocol GenericNetworkingDataSource: AnyObject {
-    func request<T, Q>(with session: URLSession, resource: Resource<T, Q>) async throws -> Q
+    func request<T, Q>(with session: Session, resource: Resource<T, Q>) async throws -> Q
     func request<T, Q>(with session: URLSession, resource: Resource<T, Q>) -> AnyPublisher<Q, Error>
 }
 
 extension GenericNetworkingDataSource {
-    func request<T, Q>(with session: URLSession, resource: Resource<T, Q>) async throws -> Q {
+    func request<T, Q>(with session: Session, resource: Resource<T, Q>) async throws -> Q {
         let (data, response) = try await session.data(for: resource.request)
         let responseData = try handleResponse(data: data, response: response)
         let entity = try JSONDecoder().decode(T.self, from: responseData)

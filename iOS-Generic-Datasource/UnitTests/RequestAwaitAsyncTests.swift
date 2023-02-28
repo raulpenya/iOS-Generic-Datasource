@@ -13,36 +13,37 @@ final class RequestAwaitAsyncTests: XCTestCase {
     func test_request_success() {
         //Given
         let dataSource = MockGenericNetworkingDataSource()
-        let session = MockUrlSession.shared
-        let resource = MockResource.getSuccessRequest()
+        let session = MockUrlSession()
+        let resource = MockResource.getResource()
         //When
-        dataSource.request(with: session, resource: resource)
+        Task {
+            do {
+                let persons = try await dataSource.request(with: session, resource: resource)
+                print(persons)
+            } catch {
+                print(error)
+            }
+        }
         //Then
         
     }
-
 }
 
-class URLSessionDataTaskMock: URLSessionDataTask {
-    private let closure: () -> Void
-
-    init(closure: @escaping () -> Void) {
-        self.closure = closure
-    }
-
-    // We override the 'resume' method and simply call our closure
-    // instead of actually resuming any task.
-    override func resume() {
-        closure()
-    }
-}
-
-class MockUrlSession: URLSession {
+class MockUrlSession: Session {
     
+    enum response {
+        case success
+        case error
+    }
+    
+    func data(for url: URLRequest, delegate: URLSessionTaskDelegate?) async throws -> (Data, URLResponse) {
+        print("MockUrlSession")
+        return (Data(), URLResponse())
+    }
 }
 
 struct MockResource {
-    static func getSuccessRequest() -> Resource<PersonsRemoteEntity, [Person]> {
+    static func getResource() -> Resource<PersonsRemoteEntity, [Person]> {
         let request = URLRequest(url: URL(string: ExampleDataSource.personsArray)!)
         return Resource<PersonsRemoteEntity, [Person]>(request: request) { persons in
             return persons.transformToDomain()

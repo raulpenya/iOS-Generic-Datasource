@@ -17,6 +17,7 @@
 		0C2E9A8A29A8E50B00FD71CC /* RequestAwaitAsyncTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2E9A8929A8E50B00FD71CC /* RequestAwaitAsyncTests.swift */; };
 		0C2E9A8C29A8E52500FD71CC /* RequestCombineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2E9A8B29A8E52500FD71CC /* RequestCombineTests.swift */; };
 		0C48E39129912F1C00B506C3 /* GenericNetworkingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C48E39029912F1C00B506C3 /* GenericNetworkingDataSource.swift */; };
+		0C6BB00629AE15D2000FA662 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6BB00529AE15D2000FA662 /* Session.swift */; };
 		0CBD0F0929912E5D009CB8BE /* iOS_Generic_Datasource_ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD0F0829912E5D009CB8BE /* iOS_Generic_Datasource_ExampleApp.swift */; };
 		0CBD0F0B29912E5D009CB8BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD0F0A29912E5D009CB8BE /* ContentView.swift */; };
 		0CBD0F0D29912E5F009CB8BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CBD0F0C29912E5F009CB8BE /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 		0C2E9A8B29A8E52500FD71CC /* RequestCombineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCombineTests.swift; sourceTree = "<group>"; };
 		0C48E38729912EF400B506C3 /* iOS-Generic-Datasource-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-Generic-Datasource-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C48E39029912F1C00B506C3 /* GenericNetworkingDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericNetworkingDataSource.swift; sourceTree = "<group>"; };
+		0C6BB00529AE15D2000FA662 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		0CBD0F0529912E5D009CB8BE /* iOS-Generic-Datasource_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Generic-Datasource_Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CBD0F0829912E5D009CB8BE /* iOS_Generic_Datasource_ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Generic_Datasource_ExampleApp.swift; sourceTree = "<group>"; };
 		0CBD0F0A29912E5D009CB8BE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -117,8 +119,9 @@
 		0C48E38129912EB800B506C3 /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				0C48E39029912F1C00B506C3 /* GenericNetworkingDataSource.swift */,
 				0C2E9A8629A8DF5700FD71CC /* DataSourceErrors.swift */,
+				0C6BB00529AE15D2000FA662 /* Session.swift */,
+				0C48E39029912F1C00B506C3 /* GenericNetworkingDataSource.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				0C48E39129912F1C00B506C3 /* GenericNetworkingDataSource.swift in Sources */,
 				0C2E9A8829A8DF5C00FD71CC /* DataSourceErrors.swift in Sources */,
 				0CBD0F0929912E5D009CB8BE /* iOS_Generic_Datasource_ExampleApp.swift in Sources */,
+				0C6BB00629AE15D2000FA662 /* Session.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
