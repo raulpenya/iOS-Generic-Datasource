@@ -25,6 +25,7 @@
 		0CE9C75329CB05AE00D0FF04 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE9C75029CB05AE00D0FF04 /* Api.swift */; };
 		0CE9C75429CB05AE00D0FF04 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE9C75129CB05AE00D0FF04 /* Resource.swift */; };
 		0CE9C75529CB05AE00D0FF04 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE9C75229CB05AE00D0FF04 /* HTTPMethod.swift */; };
+		0CE9C75729CB084A00D0FF04 /* ApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE9C75629CB084A00D0FF04 /* ApiTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		0CE9C75029CB05AE00D0FF04 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		0CE9C75129CB05AE00D0FF04 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		0CE9C75229CB05AE00D0FF04 /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		0CE9C75629CB084A00D0FF04 /* ApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				0C2E9A8129A8D56F00FD71CC /* HandleResponseTests.swift */,
 				0C2E9A8929A8E50B00FD71CC /* RequestAwaitAsyncTests.swift */,
 				0C2E9A8B29A8E52500FD71CC /* RequestCombineTests.swift */,
+				0CE9C75629CB084A00D0FF04 /* ApiTests.swift */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				0C2E9A8429A8D62300FD71CC /* MockGenericNetworkingDataSource.swift in Sources */,
 				0C2E9A8C29A8E52500FD71CC /* RequestCombineTests.swift in Sources */,
 				0C2E9A8229A8D56F00FD71CC /* HandleResponseTests.swift in Sources */,
+				0CE9C75729CB084A00D0FF04 /* ApiTests.swift in Sources */,
 				0C2E9A8A29A8E50B00FD71CC /* RequestAwaitAsyncTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

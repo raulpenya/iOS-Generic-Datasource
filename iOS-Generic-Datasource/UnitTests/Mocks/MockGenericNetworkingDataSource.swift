@@ -8,6 +8,9 @@
 import Foundation
 @testable import iOS_Generic_Datasource_Example
 
-class MockGenericNetworkingDataSource: GenericNetworkingDataSource {
-    
+enum DataSourceResponse {
+    case success
+    case error
 }
+
+class MockGenericNetworkingDataSource: GenericNetworkingDataSource { }
