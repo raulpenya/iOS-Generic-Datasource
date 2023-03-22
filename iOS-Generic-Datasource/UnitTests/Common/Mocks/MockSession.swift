@@ -21,7 +21,16 @@ class MockSession: Session {
     var response: Response = .success
     
     func data(for url: URLRequest, delegate: URLSessionTaskDelegate?) async throws -> (Data, URLResponse) {
-        throw DataSourceErrors.instanceException
+        switch response {
+        case .success:
+            return (String.getSuccessResponse().data(using: .utf8)!, URLResponse.getURLResponseSuccess())
+        case .error:
+            throw DataSourceErrors.requestException
+        case .errorHandleResponse:
+            return ((String.getSuccessResponse().data(using: .utf8)!, URLResponse.getNoHTTPURLResponseError()))
+        case .errorDecode:
+            return ((String.getEmptyResponse().data(using: .utf8)!, URLResponse.getURLResponseSuccess()))
+        }
     }
     
     func executeTaskPublisher(for request: URLRequest) -> AnyPublisher<RequestResponse, URLError> {
