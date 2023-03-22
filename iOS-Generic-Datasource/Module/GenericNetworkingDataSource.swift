@@ -8,11 +8,6 @@
 import Foundation
 import Combine
 
-struct Resource<T: Decodable, Q> {
-    let request: URLRequest
-    let transform: (T) -> Q
-}
-
 protocol GenericNetworkingDataSource: AnyObject {
     func request<T, Q>(with session: Session, resource: Resource<T, Q>?) async throws -> Q
     func request<T, Q>(with session: Session, resource: Resource<T, Q>?) -> AnyPublisher<Q, Error>

@@ -18,7 +18,7 @@ protocol Api {
 extension Api {
     func createURLRequest() throws -> URLRequest {
         guard let url = URL(string: url) else {
-            throw DataErrors.apiURLException
+            throw DataSourceErrors.apiURLException
         }
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.rawValue
