@@ -90,31 +90,3 @@ final class HandleResponseTests: XCTestCase {
         XCTAssertEqual((errorResponse! as! DataSourceErrors).code, DataSourceErrors.castHTTPURLResponseException.code)
     }
 }
-
-extension URLResponse {
-    static func getURLResponseSuccess() -> URLResponse {
-        return HTTPURLResponse(url: URL(string: ExampleDataSource.personsArray)!, statusCode: 200, httpVersion: nil, headerFields: nil)!
-    }
-    
-    static func getURLResponseError() -> URLResponse {
-        return HTTPURLResponse(url: URL(string: ExampleDataSource.personsError)!, statusCode: 404, httpVersion: nil, headerFields: nil)!
-    }
-    
-    static func getNoHTTPURLResponseError() -> URLResponse {
-        return URLResponse(url: URL(string: ExampleDataSource.personsError)!, mimeType: nil, expectedContentLength: 0, textEncodingName: nil)
-    }
-}
-
-extension String {
-    static func getSuccessResponse() -> String {
-        return "{\"persons\":[{\"name\":\"Shyam\",\"email\":\"shyamjaiswal@gmail.com\"},{\"name\":\"Bob\",\"email\":\"bob32@gmail.com\"},{\"name\":\"Jai\",\"email\":\"jai87@gmail.com\"}]}"
-    }
-    
-    static func getErrorResponse() -> String {
-        return "404 Bad request"
-    }
-    
-    static func getEmptyResponse() -> String {
-        return ""
-    }
-}
