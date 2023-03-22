@@ -20,7 +20,7 @@ class MockSession: Session {
     
     var response: Response = .success
     
-    func data(for url: URLRequest, delegate: URLSessionTaskDelegate?) async throws -> (Data, URLResponse) {
+    func data(for url: URLRequest) async throws -> (Data, URLResponse) {
         switch response {
         case .success:
             return (String.getSuccessResponse().data(using: .utf8)!, URLResponse.getURLResponseSuccess())
