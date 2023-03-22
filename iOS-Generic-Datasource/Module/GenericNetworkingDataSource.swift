@@ -28,7 +28,7 @@ extension GenericNetworkingDataSource {
         guard let resource = resource else {
             return Fail(error: DataSourceErrors.requestException).eraseToAnyPublisher()
         }
-        return session.dataTaskPublisher(for: resource.request).tryMap { [weak self] data, response in
+        return session.executeTaskPublisher(for: resource.request).tryMap { [weak self] data, response in
             guard let strongSelf = self else {
                 throw  DataSourceErrors.instanceException
             }
