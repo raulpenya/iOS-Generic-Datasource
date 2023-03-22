@@ -27,10 +27,9 @@
 		0CE9C75529CB05AE00D0FF04 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE9C75229CB05AE00D0FF04 /* HTTPMethod.swift */; };
 		0CE9C75729CB084A00D0FF04 /* ApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE9C75629CB084A00D0FF04 /* ApiTests.swift */; };
 		0CE9C75A29CB09C100D0FF04 /* MockApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE9C75829CB09A700D0FF04 /* MockApi.swift */; };
-		0CE9C75C29CB133700D0FF04 /* MockPersons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE9C75B29CB133700D0FF04 /* MockPersons.swift */; };
-		0CE9C75E29CB149900D0FF04 /* MockApiPersons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE9C75D29CB149900D0FF04 /* MockApiPersons.swift */; };
 		0CE9C76329CB195100D0FF04 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE9C76129CB194D00D0FF04 /* String+Extensions.swift */; };
 		0CE9C76629CB197C00D0FF04 /* URLResponse+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE9C76429CB197000D0FF04 /* URLResponse+Extensions.swift */; };
+		0CE9C77329CB1C1D00D0FF04 /* MockSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE9C77129CB1C0100D0FF04 /* MockSession.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,10 +65,9 @@
 		0CE9C75229CB05AE00D0FF04 /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		0CE9C75629CB084A00D0FF04 /* ApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTests.swift; sourceTree = "<group>"; };
 		0CE9C75829CB09A700D0FF04 /* MockApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApi.swift; sourceTree = "<group>"; };
-		0CE9C75B29CB133700D0FF04 /* MockPersons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPersons.swift; sourceTree = "<group>"; };
-		0CE9C75D29CB149900D0FF04 /* MockApiPersons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApiPersons.swift; sourceTree = "<group>"; };
 		0CE9C76129CB194D00D0FF04 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		0CE9C76429CB197000D0FF04 /* URLResponse+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLResponse+Extensions.swift"; sourceTree = "<group>"; };
+		0CE9C77129CB1C0100D0FF04 /* MockSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSession.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,8 +120,7 @@
 			children = (
 				0C2E9A8329A8D62300FD71CC /* MockGenericNetworkingDataSource.swift */,
 				0CE9C75829CB09A700D0FF04 /* MockApi.swift */,
-				0CE9C75B29CB133700D0FF04 /* MockPersons.swift */,
-				0CE9C75D29CB149900D0FF04 /* MockApiPersons.swift */,
+				0CE9C77129CB1C0100D0FF04 /* MockSession.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -329,6 +326,7 @@
 				0C2E9A8429A8D62300FD71CC /* MockGenericNetworkingDataSource.swift in Sources */,
 				0CE9C76329CB195100D0FF04 /* String+Extensions.swift in Sources */,
 				0C2E9A8C29A8E52500FD71CC /* RequestCombineTests.swift in Sources */,
+				0CE9C77329CB1C1D00D0FF04 /* MockSession.swift in Sources */,
 				0CE9C75A29CB09C100D0FF04 /* MockApi.swift in Sources */,
 				0CE9C76629CB197C00D0FF04 /* URLResponse+Extensions.swift in Sources */,
 				0C2E9A8229A8D56F00FD71CC /* HandleResponseTests.swift in Sources */,
@@ -342,9 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C1FB8E02993997200EB5B8C /* Person.swift in Sources */,
-				0CE9C75E29CB149900D0FF04 /* MockApiPersons.swift in Sources */,
 				0C1FB8E62993AF2B00EB5B8C /* Persons.swift in Sources */,
-				0CE9C75C29CB133700D0FF04 /* MockPersons.swift in Sources */,
 				0C1FB8E32993AA6000EB5B8C /* ExampleDataSource.swift in Sources */,
 				0CE9C75429CB05AE00D0FF04 /* Resource.swift in Sources */,
 				0C242E1629927D5F009DEDAC /* ContentViewModel.swift in Sources */,
