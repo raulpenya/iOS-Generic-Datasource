@@ -13,7 +13,7 @@ It offers the possibility of make a request using `await/async` or `Combine` (so
   func request<T, Q>(with session: Session, resource: Resource<T, Q>?) -> AnyPublisher<Q, Error>
   ```
   
-This methods receive as a parameter `Session`, which is a protocol implemented by `URLSession`:
+This methods receive as a parameter `Session`, which is a protocol implemented by `URLSession`, this way you can use `URLSession` or you custom session:
 ```
 protocol Session {
     typealias RequestResponse = URLSession.DataTaskPublisher.Output
@@ -30,6 +30,7 @@ extension URLSession: Session {
     }
 }
 ```
+
 And a struct called `Resource`:
 ```
 struct Resource<T: Decodable, Q> {
