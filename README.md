@@ -82,5 +82,5 @@ public enum DataSourceErrors: Int, Error {
 }
 ```
 
-## Nexts steps
-- GenericCoreDataDataSource (coming soon)
+## GenericCoreDataDataSource
+(coming soon)
